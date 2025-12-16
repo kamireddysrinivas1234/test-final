@@ -54,17 +54,17 @@ jobs:
       - name: Login to Docker Hub
         if: env.DOCKERHUB_USERNAME != '' && env.DOCKERHUB_TOKEN != ''
         env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          DOCKERHUB_USERNAME: srinivaskamireddy
+          DOCKERHUB_TOKEN: Srinivas@1234
         run: |
           echo "$DOCKERHUB_TOKEN" | docker login -u "$DOCKERHUB_USERNAME" --password-stdin
       - name: Build image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-feature-assignment:latest .
+          docker build -t srinivaskamireddy/fastapi-feature-assignment:latest .
       - name: Push image
         if: env.DOCKERHUB_USERNAME != '' && env.DOCKERHUB_TOKEN != ''
         env:
-          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          DOCKERHUB_USERNAME: srinivaskamireddy
+          DOCKERHUB_TOKEN: Srinivas@1234
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/fastapi-feature-assignment:latest
+          docker push srinivaskamireddy/fastapi-feature-assignment:latest
