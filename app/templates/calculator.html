@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Calculator + History + Reports</h1>
+
+<div class="grid">
+  <div class="card">
+    <h2>New calculation</h2>
+    <label>A</label>
+    <input id="a" type="number" step="any" value="10" />
+    <label>B</label>
+    <input id="b" type="number" step="any" value="3" />
+    <label>Operation</label>
+    <select id="op">
+      <option value="add">add</option>
+      <option value="sub">sub</option>
+      <option value="mul">mul</option>
+      <option value="div">div</option>
+      <option value="mod">mod</option>
+      <option value="pow">pow</option>
+    </select>
+    <button id="btnCalc" class="btn">Compute</button>
+    <p id="calcMsg" class="msg"></p>
+  </div>
+
+  <div class="card">
+    <h2>Reports</h2>
+    <button id="btnStats" class="btn">Refresh stats</button>
+    <pre id="statsBox" class="pre"></pre>
+  </div>
+</div>
+
+<div class="card">
+  <h2>History</h2>
+  <button id="btnHistory" class="btn">Refresh history</button>
+  <table class="table">
+    <thead><tr><th>ID</th><th>A</th><th>B</th><th>Op</th><th>Result</th></tr></thead>
+    <tbody id="histBody"></tbody>
+  </table>
+</div>
+{% endblock %}

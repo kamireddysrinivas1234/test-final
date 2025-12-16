@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Profile</h1>
+<div class="grid">
+  <div class="card">
+    <h2>Update profile</h2>
+    <label>Username</label>
+    <input id="p_username" />
+    <label>Email</label>
+    <input id="p_email" />
+    <button id="btnProfileSave" class="btn">Save</button>
+    <p id="profileMsg" class="msg"></p>
+  </div>
+  <div class="card">
+    <h2>Change password</h2>
+    <label>Current password</label>
+    <input id="cur_pw" type="password" />
+    <label>New password</label>
+    <input id="new_pw" type="password" />
+    <button id="btnChangePw" class="btn">Change password</button>
+    <p id="pwMsg" class="msg"></p>
+  </div>
+</div>
+{% endblock %}
